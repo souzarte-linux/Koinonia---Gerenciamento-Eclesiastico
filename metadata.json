@@ -1,0 +1,6 @@
+{
+  "name": "Koinonia Architecture",
+  "description": "Documentação da Arquitetura do Koinonia - Sistema de Controle Eclesiástico Koinonia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
