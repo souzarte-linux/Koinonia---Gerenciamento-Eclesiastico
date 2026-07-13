@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Database, FileCode2, Layers, LayoutTemplate, UserMinus, PlusCircle, MessageSquare } from 'lucide-react';
+import { Database, FileCode2, Layers, LayoutTemplate, UserMinus, PlusCircle, MessageSquare, Network } from 'lucide-react';
 
 export default function AndroidAbsence() {
   const [activeTab, setActiveTab] = useState<string>('ausencia_entity');
