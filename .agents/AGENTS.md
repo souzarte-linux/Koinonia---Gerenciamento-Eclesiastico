@@ -1,7 +1,9 @@
 # Project-Scoped Rules
 
 ## Environment Configuration
-- Java is not globally installed. Always configure `JAVA_HOME` at the start of each PowerShell session before running Gradle or Java commands:
+- Java 21 is globally installed at `C:\Program Files\Microsoft\jdk-21.0.11.10-hotspot\`. 
+- If running commands in a terminal session that was opened before the installation, reload the environment variables or set `JAVA_HOME` manually:
   ```powershell
-  $env:JAVA_HOME="C:\Users\cyber\.antigravity-ide\extensions\redhat.java-1.55.0-win32-x64\jre\21.0.11-win32-x86_64"
+  $env:JAVA_HOME="C:\Program Files\Microsoft\jdk-21.0.11.10-hotspot"
+  $env:PATH = "C:\Program Files\Microsoft\jdk-21.0.11.10-hotspot\bin;" + $env:PATH
   ```
