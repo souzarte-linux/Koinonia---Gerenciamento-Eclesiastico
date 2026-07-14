@@ -72,11 +72,7 @@ fun MainNavigation() {
                         selected = selected,
                         onClick = {
                             if (!selected) {
-                                // Remove todos os itens do stack e adiciona a nova rota
-                                val size = backStack.size
-                                if (size > 0) {
-                                    backStack.removeRange(0, size)
-                                }
+                                backStack.clear()
                                 backStack.add(item.route)
                             }
                         },

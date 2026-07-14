@@ -40,7 +40,7 @@ class SyncManager(
             .setConstraints(constraints)
             .setBackoffCriteria(
                 BackoffPolicy.EXPONENTIAL,
-                WorkManager.MIN_BACKOFF_MILLIS,
+                androidx.work.WorkRequest.MIN_BACKOFF_MILLIS,
                 TimeUnit.MILLISECONDS
             )
             .build()

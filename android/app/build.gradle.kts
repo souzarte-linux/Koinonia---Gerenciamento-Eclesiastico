@@ -5,6 +5,8 @@ plugins {
   id("com.android.legacy-kapt") version "9.0.1"
 }
 
+
+
 android {
     namespace = "com.example.koinonia"
     compileSdk = 36
@@ -62,6 +64,7 @@ dependencies {
   implementation(libs.androidx.compose.ui)
   implementation(libs.androidx.compose.ui.tooling.preview)
   implementation(libs.androidx.compose.material3)
+  implementation(libs.androidx.compose.material.icons.extended)
   // Tooling
   debugImplementation(libs.androidx.compose.ui.tooling)
   // Instrumented tests
@@ -91,3 +94,27 @@ dependencies {
   // WorkManager
   implementation(libs.androidx.work.runtime.ktx)
 }
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask<*>>().configureEach {
+    compilerOptions {
+        languageVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_0)
+        apiVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_0)
+    }
+}
+
+
+kapt {
+    arguments {
+        arg("room.verifier", "false")
+    }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.internal.KaptWithoutKotlincTask>().configureEach {
+    kaptProcessJvmArgs.add("-Dorg.sqlite.lib.path=C:/Users/cyber/AppData/Local/Temp")
+    kaptProcessJvmArgs.add("-Dorg.sqlite.lib.name=sqlitejdbc.dll")
+    kaptProcessJvmArgs.add("-Dorg.sqlite.tmpdir=C:/Users/cyber/AppData/Local/Temp")
+    kaptProcessJvmArgs.add("-Djava.io.tmpdir=C:/Users/cyber/AppData/Local/Temp")
+}
+
+
+
